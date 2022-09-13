@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS';
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: navy;
+    color: white;
+    position: fixed;
+    width: 100%;
+}
+.menu-list a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+.menu-icon, #show-menu{
+    display: none;
+}
+
+@media screen and (max-width: 850px){
+    .menu-icon{
+        display: block;
+        font-size: 25px;
+        padding: .5em 1em;
+    }
+    .logo{
+        padding: 1em;
+    }
+    .menu-list{
+        position: absolute;
+        background-color: navy;
+        height: 89.5vh;
+        width: 50%;
+        top: 60px;
+        border-top: 2px solid orange;
+        text-align: left;
+        font-size: 20px;
+        padding-top: 1em;
+        left: -100%;
+        transition: .5s ease-out;
+    }
+    .menu-list a{
+        display: block;
+    }
+    .menu-list a:hover{
+        color: orange;
+        background-color: white;
+    }
+    nav{
+        padding: 0;
+    }
+    nav #show-menu:checked ~ .menu-icon i::before{
+        content:'\f00d';
+        color: orange;
+    }
+    nav #show-menu:checked ~ .menu-list{
+        left: 0px;
+    }
+
+}
