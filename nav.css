@@ -21,8 +21,17 @@ nav{
 .menu-icon, #show-menu{
     display: none;
 }
-
+.logo span{
+    background-color: white;
+    color: navy;
+    border-radius: 2px;
+    padding: 0 3px;
+    margin: 0 2px;
+}
 @media screen and (max-width: 850px){
+    nav{
+        position: fixed;
+    }
     .menu-icon{
         display: block;
         font-size: 25px;
@@ -32,7 +41,7 @@ nav{
         padding: 1em;
     }
     .menu-list{
-        position: absolute;
+        position: fixed;
         background-color: navy;
         height: 89.5vh;
         width: 50%;
@@ -46,6 +55,26 @@ nav{
     }
     .menu-list a{
         display: block;
+        position: relative;
+    }
+    .menu-list a:hover::before{
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: orange;
+        top: 15px;
+        right: 5px;
+        transform: rotate(45deg);
+    }
+    .menu-list a:hover::after{
+        content: '';
+        position: absolute;
+        height: 30px;
+        width: 19px;
+        background-color: white;
+        top: 10px;
+        right: 0;
     }
     .menu-list a:hover{
         color: orange;
